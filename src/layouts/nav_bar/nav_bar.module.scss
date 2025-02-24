@@ -1,10 +1,12 @@
+
 .navbar{
-  background-color: red;
+  background-color: #1b1b1b;;
   color: rgb(0, 255, 55);
   width: 200px;
   padding: 10px;
   overflow: hidden;
   display: block;
+
   ul {
     padding: 10px;
     list-style: none;
@@ -13,10 +15,14 @@
   {
     margin-top: 10px;
     margin-bottom: 50px;
-    position: sticky;
+    padding: 50px;
+    background-color: red;
+    cursor: pointer;
   }
+  
   a, a:hover, a:active, a:visited, a:focus {
     color: white;
     text-decoration:none;
   }}
 }
+

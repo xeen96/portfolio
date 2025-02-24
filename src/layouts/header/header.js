@@ -4,11 +4,10 @@ import styles from "./header.module.scss"
 const Header = () => {
   return (
     <div  
-      className={styles.head}
       id={styles.header}>
-      <div className="circle-red"></div>
-      <div className="circle-yellow"></div>
-      <div className="circle-green"></div>
+      <div className={styles["circle-red"]}></div>
+      <div className={styles["circle-yellow"]}></div>
+      <div className={styles["circle-green"]}></div>
     </div>
   )
 }
