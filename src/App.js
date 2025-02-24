@@ -6,9 +6,11 @@ import PageDisplay from "./components/page_display/page_display";
 function App() {
   return (
     <div className={styles.App}>
-      <NavBar/>
-      <Header/>
-      <PageDisplay/>
+      <Header />
+      <div className={styles.content}>
+        <NavBar />
+        <PageDisplay />
+      </div>
     </div>
   );
 }

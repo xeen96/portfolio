@@ -3,5 +3,10 @@
   display: flex;
   flex-direction: column;
   height: 100vh; // 100% высоты экрана
-  overflow: hidden; // Убираем лишнюю прокрутку
+  // overflow: hidden; // Убираем лишнюю прокрутку
+}
+
+.content {
+  display: flex;
+  flex: 1;
 }
