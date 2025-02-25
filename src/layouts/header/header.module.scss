@@ -1,7 +1,9 @@
+@use "../../styles/variables" as *;
+
 #header {
-  height: 70px;
+  height: 77.5px;
   // background: #333;
-  background-color: #1b1b1b;;
+  background-color: $primary-bg;
   color: white;
   display: flex;
   flex-direction: row;
@@ -16,7 +18,7 @@
   height: 50px;
   border-radius: 50%;
   background-color: $color;
-  margin-left: 15px;
+  margin-right: 30px;
 }
 .circle-red {
   @include circle(red);
