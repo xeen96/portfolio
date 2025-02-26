@@ -1,16 +1,35 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styles from "./nav_bar.module.scss";
 
-const NavBar  = () => {
+const NavBar = () => {
   return (
-      <nav className={styles.navbar}>
-        <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Contact/Hire</a></li>
-        </ul>
-      </nav>
-  )
-}
+    <nav className={styles.navbar}>
+      <ul>
+        <li className={styles["li-blue"]}>
+          <NavLink 
+            to="/about"
+          >
+            About
+          </NavLink>
+        </li>
+        <li className={styles["li-red"]}>
+          <NavLink 
+            to="/skills" 
+          >
+            Skills
+          </NavLink>
+        </li>
+        <li className={styles["li-green"]}>
+          <NavLink 
+            to="/contact"
+          >
+            Contact | Hire
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
 export default NavBar;
