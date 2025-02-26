@@ -5,13 +5,12 @@ import PageDisplay from "./page_display/page_display";
 import styles from "./main_layout.module.scss"
 
 const Layout = () => {
-
   return (
     <>
       <Header />
       <div className={styles.content}>
         <NavBar />
-        <PageDisplay />
+        <PageDisplay/>
       </div>
     </>
   )
