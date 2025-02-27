@@ -7,7 +7,6 @@ const NavBar = () => {
     <nav className={styles.navbar}>
       <ul>
         <li className={styles["li-blue"]}>
-          <div className={styles["img-container"]}></div>
           <NavLink 
             to="/about"
           >
