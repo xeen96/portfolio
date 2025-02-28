@@ -3,10 +3,11 @@
 .navbar {
   background-color: $primary-bg;
   display: flex;
+  position: relative;
   width: 200px;
+  min-width: 200px;
   border-right: 3px solid black;
   justify-content: center;
-  
   
   ul {
     position: relative;
@@ -28,23 +29,19 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    border: 2px solid $frame-color;
-    
+    border: 1.5px solid $frame-color;
+    z-index: 0;
 
     /* frame logic*/
      &:hover {
-      box-shadow: 0 0 50px 2px $frame-color;
+      filter: drop-shadow(0 0 10px $frame-color) drop-shadow(0 0 20px $frame-color) drop-shadow(0 0 30px $frame-color);
+      z-index: 1;
       scale: 1.25;
+      a {
+        font-weight: 500;
+        // filter: drop-shadow(0px 0px 10px aliceblue);
+      }
     }
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   inset: 30px;
-    //   box-shadow: 0 0 0 10px #f70000, 0 0 0 20px var($primary-bg), 0 0 0 20px #fff;
-    // }
-    // &:hover::before {
-    //   inset: -15px;
-    // }
 
     &::after {
       content: "";
@@ -53,13 +50,14 @@
       transform: rotate(45deg);
       transition: 0.75s;
       inset: -15%;
+      z-index: 1;
     }
 
     &:hover::after {
       background-color: $primary-bg;
       transform: rotate(0deg);
       transition: 0.5s;
-      inset: 25%;
+      inset: 100%;
     }
     /* end frame logic*/ 
   }
@@ -87,10 +85,11 @@
     text-align: center;
     width: 100%;
     height: 100%;
-    z-index: 999;
+    z-index: 10;
     font-weight: 200;
     font-size: 18px;
     letter-spacing: 3.5px;
     text-transform: uppercase;
+
   }
 }

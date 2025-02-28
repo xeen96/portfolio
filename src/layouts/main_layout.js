@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./nav_bar/nav_bar";
 import Header from "./header/header";
-import AboutPage from "../pages/home";
+import AboutPage from "../pages/about";
 import SkillsPage from "../pages/skills";
 import ContactPage from "../pages/contact"
 import styles from "./main_layout.module.scss";

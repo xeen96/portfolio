@@ -1,7 +1,7 @@
 @use "../../styles/variables" as *;
 
 #header {
-  height: 77.5px;
+  height: 60px;
   // background: #333;
   background-color: $primary-bg;
   color: white;
@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: left;
   gap:30px;
+  flex-shrink: 0;
 }
 .img-container {
   width: 180px;
@@ -24,16 +25,17 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 64px;
+  height: 54px;
   margin-left: 15px;
 }
 
 
 @mixin circle($color) {
-  width: 64px;
-  height: 64px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background-color: $color;
+  flex-shrink: 0;
 
 }
 .circle-red {
