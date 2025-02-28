@@ -5,7 +5,7 @@ import Layout from "./layouts/main_layout";
 function App() {
   return (
     <BrowserRouter>
-      <div className={styles.App}>
+      <div className={styles.app}>
         <Layout />
       </div>
     </BrowserRouter>
