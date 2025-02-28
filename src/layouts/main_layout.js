@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./nav_bar/nav_bar";
 import Header from "./header/header";
 import AboutPage from "../pages/about/about";
-import SkillsPage from "../pages/skills";
-import ContactPage from "../pages/contact"
+import SkillsPage from "../pages/skills/skills";
+import ContactPage from "../pages/hire/hire"
 import styles from "./main_layout.module.scss";
 import PageDisplay from "./page_display/page_display";
 

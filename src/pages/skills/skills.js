@@ -4,7 +4,7 @@ import styles from "./skills.module.scss"
 const Skills = () => {
 
   return (
-    <div className="skills">
+    <div className={styles.skills}>
           <h4>Placeholder for Skills page</h4>
     </div>
 
