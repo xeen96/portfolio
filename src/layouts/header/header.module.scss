@@ -1,38 +1,39 @@
 @use "../../styles/variables" as *;
 
 #header {
-  height: 60px;
+//   height: 60px;
   // background: #333;
   background-color: $primary-bg;
   color: white;
   display: flex;
-  padding: 10px;
   border-bottom: 3px solid rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  gap:30px;
-  flex-shrink: 0;
+  gap:2vw;
+  grid-area: header;
 }
 .img-container {
-  width: 180px;
+  margin-left: 2vw;
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: center;
+  height: 32px;
+
 }
 img {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 54px;
-  margin-left: 15px;
+  height: 100%;
+  aspect-ratio: 12/4;
 }
 
 
 @mixin circle($color) {
-  width: 54px;
-  height: 54px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background-color: $color;
   flex-shrink: 0;

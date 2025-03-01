@@ -9,7 +9,8 @@ const About = () => {
   <h1>About Me</h1>
     <p>Hi, I'm <span>Oleh</span>, a passionate software and web developer from Ukraine.</p>
     <p>I specialize in building modern, responsive applications using <strong>React</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, and <strong>SCSS</strong>.</p>
-    <p>While I’m early in my career, I’m eager to grow, learn, and contribute to impactful projects. Thanks for stopping by!</p>
+    <p>While I’m early in my career, I’m eager to grow, learn, and contribute to impactful projects.</p>
+    <p><strong>Thanks</strong> for stopping by!</p>
     </div>
 
   <div className={styles["social-button-container"]}>

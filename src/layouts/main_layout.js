@@ -7,21 +7,23 @@ import SkillsPage from "../pages/skills/skills";
 import ContactPage from "../pages/hire/hire"
 import styles from "./main_layout.module.scss";
 import PageDisplay from "./page_display/page_display";
+import Footer from "./footer/footer";
 
 const Layout = () => {
   return (
-    <>
+    <div className={styles.layout}>
       <Header />
-      <div className={styles.content}>
         <NavBar />
+        <main>
         <Routes>
           <Route path="*" element={<AboutPage/>}/>
           <Route path="/about" element={<AboutPage />} />
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
-      </div>
-    </>
+        </main>
+      <Footer/>
+    </div>
   );
 };
 
