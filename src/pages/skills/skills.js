@@ -6,7 +6,7 @@ const Skills = () => {
   const skills = [
     {
       category: "Web Development",
-      subSkills: ["React", "JavaScript", "CSS", "SCSS"],
+      subSkills: ["React.js", "JavaScript", "CSS", "SCSS"],
     },
     {
       category: "Programming Languages",
@@ -14,8 +14,12 @@ const Skills = () => {
     },
     {
       category: "Tools",
-      subSkills: ["Git", "Webpack"],
+      subSkills: ["Git / GitLab", "Webpack"],
     },
+    {
+      category: "Personal Qualities",
+      subSkills: ["Attentive", "Stressproof", "Fast Learner", "Responsible"]
+    }
   ];
 
   return (
