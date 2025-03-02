@@ -1,0 +1,29 @@
+// components/copy_text_field/CopyTextField.module.scss
+@use "../../styles/variables" as *;
+
+.copyContainer {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.copyButton {
+  padding: 0 0.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: $decorative-text;
+  height: 24px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(130, 62, 183, 0.1);
+    color: darken($decorative-text, 10%);
+  }
+
+  &:active {
+    background: rgba(130, 62, 183, 0.2);
+  }
+}

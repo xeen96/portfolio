@@ -22,7 +22,7 @@ const NavBar = () => {
         </li>
         <li className={styles["li-green"]}>
           <NavLink 
-            to="/contact"
+            to="/hire"
           >
             Hire
           </NavLink>
