@@ -7,7 +7,7 @@ const Header = () => {
     <div  
       id={styles.header}>
       <div className={styles["img-container"]}>
-        <a href="/about"><img src={logo}></img>
+        <a href="/about"><img src={logo} alt="logo"></img>
         </a>
       </div>
       <div className={styles["circle-red"]}></div>

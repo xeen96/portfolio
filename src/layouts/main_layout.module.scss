@@ -11,8 +11,8 @@
     "header header"
     "navbar content"
     "footer footer";
-  grid-template-rows: 10vh 1fr 5vh;
-  grid-template-columns: 10vw 1fr; 
+  grid-template-rows: 40px 1fr 5vh;
+  grid-template-columns: 10vw 90vw; 
   min-height: 100vh;
   
   & > header {
@@ -21,8 +21,7 @@
   
   & > nav {
     grid-area: navbar;
-    min-width: 5rem;
-    font-size: 12px;
+    font-size: 1em;
   }
   
   & > main {
@@ -40,19 +39,29 @@
   
   & > footer {
     grid-area: footer;
+    min-height: 5vh;
   }
+}
+@media (min-width: 126px) and (max-width: 526px){
+  .layout {
+    grid-template-rows: 40px 1fr 5vh;
+    grid-template-columns: 20vw 80vw; 
 
-  
-@media (min-width: 126px) and (max-width: 768px){
-  a {
-    font-size: 0.35rem;
+    & > nav {
+      grid-area: navbar;
+      font-size: 0.3em;
+    }
   }
-  // & > main {
-  //   h4, p {
-  //     font-size: 1rem;
-  //   }
-  // }
 }
 
-}
+@media (min-width: 527px) and (max-width: 768px){
+  .layout {
+    grid-template-rows: 40px 1fr 5vh;
+    grid-template-columns: 20vw 80vw; 
 
+    & > nav {
+      grid-area: navbar;
+      font-size: 0.6em;
+    }
+  }
+}

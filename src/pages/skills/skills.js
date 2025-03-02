@@ -1,55 +1,46 @@
-import React, { useState } from "react";
+// Skills.jsx
+import React from "react";
 import styles from "./skills.module.scss";
 
-
 const Skills = () => {
-  const [activeNode, setActiveNode] = useState(null);
-
-  const skillTree = {
-    name: "Web Development",
-    children: [
-      {
-        name: "React",
-        children: [
-          { name: "Hooks", desc: "State & Effects" },
-          { name: "Components", desc: "Reusable UI" },
-        ],
-      },
-      {
-        name: "JavaScript",
-        children: [
-          { name: "ES6+", desc: "Modern Syntax" },
-          { name: "Async", desc: "Promises & Fetch" },
-        ],
-      },
-      { name: "CSS", children: [{ name: "SCSS", desc: "Nested Styles" }] },
-    ],
-  };
-
-  const renderTree = (node, depth = 0) => (
-    <li key={node.name} className={styles.node}>
-      <div
-        className={`${styles.skill} ${activeNode === node.name ? styles.active : ""}`}
-        onClick={() => setActiveNode(activeNode === node.name ? null : node.name)}
-        style={{ marginLeft: `${depth * 2}rem` }}
-      >
-        {node.name}
-        {node.desc && activeNode === node.name && (
-          <span className={styles.desc}>{node.desc}</span>
-        )}
-      </div>
-      {node.children && (
-        <ul className={styles.branch}>
-          {node.children.map((child) => renderTree(child, depth + 1))}
-        </ul>
-      )}
-    </li>
-  );
+  const skills = [
+    {
+      category: "Web Development",
+      subSkills: ["React", "JavaScript", "CSS", "SCSS"],
+    },
+    {
+      category: "Programming Languages",
+      subSkills: ["JavaScript", "Python", "C++"],
+    },
+    {
+      category: "Tools",
+      subSkills: ["Git", "Webpack"],
+    },
+  ];
 
   return (
-    <div className={styles.skills}>
-      <h1>Skills Tree</h1>
-      <ul className={styles.tree}>{renderTree(skillTree)}</ul>
+    <div className={styles.content}>
+    <div className={styles.skillsTree}>
+      <h1>My Skills</h1>
+      <ul className={styles.treeList}>
+        {skills.map(({ category, subSkills }) => (
+          <li key={category} className={styles.treeNode}>
+            <div className={styles.category}>
+              <span className={styles.categoryMarker}>▼</span>
+              {category}
+            </div>
+            <ul className={styles.branchList}>
+              {subSkills.map((skill) => (
+                <li key={skill} className={styles.branch}>
+                  <span className={styles.branchMarker}>─</span>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </div>
     </div>
   );
 };
