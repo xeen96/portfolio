@@ -5,20 +5,33 @@ import styles from "./skills.module.scss";
 const Skills = () => {
   const skills = [
     {
-      category: "Web Development",
-      subSkills: ["React.js", "JavaScript", "CSS", "SCSS"],
-    },
-    {
       category: "Programming Languages",
       subSkills: ["JavaScript", "Python", "C++"],
     },
+
+    {
+      category: "Web Development",
+      subSkills: ["React.js", "JavaScript", "CSS", "SCSS"],
+    },
+
     {
       category: "Tools",
-      subSkills: ["Git / GitLab", "Webpack"],
+      subSkills: ["Git / GitLab", "Photoshop", "Redux (Basic)"],
     },
+
+    {
+      category: "Interfaces",
+      subSkills: ["Relational DB", "API"]
+    },
+
+    {
+      category: "Programming Methodologies",
+      subSkills: ["OOP", "Functional Programming", "Component-Based", "Procedural Programming"]
+    },
+
     {
       category: "Personal Qualities",
-      subSkills: ["Attentive", "Stressproof", "Fast Learner", "Responsible"]
+      subSkills: ["Attentive", "Fast Learner", "Responsible", "Stressproof"]
     }
   ];
 
