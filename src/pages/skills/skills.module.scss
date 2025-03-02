@@ -9,7 +9,7 @@
   width: 100%;
   height: calc(100vh - 40px - 5vh);
 
-.skillsTree {
+  .skillsTree {
   font-family: $primary-fonts;
   background: $page-bg;
   padding: 2rem;
@@ -17,7 +17,8 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   height: 100%;
   overflow-y: auto; 
-  
+  scrollbar-width: thin;
+  scrollbar-color: $decorative-text $page-bg;
   &::-webkit-scrollbar {
     width: 12px;
   }
@@ -29,21 +30,18 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #823eb7 0%, $primary-bg 100%);
+    background: linear-gradient(90deg, $decorative-text 0%, $primary-bg 100%);
     border-radius: 8px;
     border: 2px solid $page-bg;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     
     &:hover {
-      background: linear-gradient(90deg, darken(#823eb7, 10%) 0%, darken($primary-bg, 10%) 100%);
+      background: linear-gradient(90deg, darken($decorative-text, 10%) 0%, darken($primary-bg, 10%) 100%);
     }
   }
 
-  scrollbar-width: thin;
-  scrollbar-color: #823eb7 $page-bg;
-}
 
-h1 {
+  h1 {
   font-family: $secondary-fonts;
   font-weight: 800;
   text-transform: uppercase;
@@ -55,42 +53,42 @@ h1 {
   filter: drop-shadow(2px 3px 1px white);
   z-index: 1;
   text-align: center;
-}
+  }
 
-.treeList {
+  .treeList {
   list-style: none;
   padding: 0;
-}
+  }
 
-.treeNode {
+  .treeNode {
   margin: 1rem 0;
-}
+  }
 
-.category {
+  .category {
   text-shadow: 0 0 0.5px #333;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #823eb7;
+  color: $decorative-text;
   padding: 0.5rem;
   position: relative;
   background: linear-gradient(to right, #f5f6fa 0%, #ffffff 100%);
-  border-left: 4px solid #823eb7;
-}
+  border-left: 4px solid $decorative-text;
+  }
 
-.categoryMarker {
+  .categoryMarker {
   margin-right: 0.5rem;
   color: #7f8c8d;
   font-size: 0.8rem;
   
-}
+  }
 
-.branchList {
+  .branchList {
   list-style: none;
   padding-left: 1.5rem;
   margin: 0.5rem 0 0;
-}
+  }
 
-.branch {
+  .branch {
   padding: 0.4rem 0;
   font-size: 1rem;
   color: #2c3e50;
@@ -100,13 +98,14 @@ h1 {
 
   &:hover {
     transform: translateX(5px);
-    color: #823eb7;
+    color: $decorative-text;
     font-weight: bold;
   }
-}
+  }
 
 .branchMarker {
   margin-right: 0.5rem;
   color: #95a5a6;
+}
 }
 }

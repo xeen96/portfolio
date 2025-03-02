@@ -4,6 +4,7 @@
 //   grid-template-rows: max-content;
 
 // }
+@use "../styles/variables" as *;
 
 .layout {
   display: grid;
@@ -50,7 +51,7 @@
 
     & > nav {
       grid-area: navbar;
-      font-size: 0.3em;
+      font-size: 0.3rem;
     }
   }
 }
@@ -62,7 +63,17 @@
 
     & > nav {
       grid-area: navbar;
-      font-size: 0.6em;
+      font-size: 0.6rem;
     }
   }
 }
+@media (min-width: 769px) and (max-width: 1024px) 
+{
+  .layout {
+    & > nav {
+      grid-area: navbar;
+      font-size: 0.7rem;
+    }
+  }
+}
+

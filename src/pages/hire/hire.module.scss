@@ -8,9 +8,26 @@
   background-color: $page-bg;
   width: 100%;
   height: calc(100vh - 40px - 5vh);
+
+  h1 {
+    font-family: $secondary-fonts;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, $primary-bg, $decorative-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 3px 1px white);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 }
 
 .contactContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: $primary-fonts;
   background: $page-bg;
   padding: 2rem;
@@ -32,33 +49,21 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #823eb7 0%, $primary-bg 100%);
+    background: linear-gradient(90deg, $decorative-text 0%, $primary-bg 100%);
     border-radius: 8px;
     border: 2px solid $page-bg;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     
     &:hover {
-      background: linear-gradient(90deg, darken(#823eb7, 10%) 0%, darken($primary-bg, 10%) 100%);
+      background: linear-gradient(90deg, darken($decorative-text, 10%) 0%, darken($primary-bg, 10%) 100%);
     }
   }
 
   scrollbar-width: thin;
-  scrollbar-color: #823eb7 $page-bg;
+  scrollbar-color: $decorative-text $page-bg;
 }
 
-h1 {
-  font-family: $secondary-fonts;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: linear-gradient(90deg, $primary-bg, $decorative-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(2px 3px 1px white);
-  text-align: center;
-  margin-bottom: 2rem;
-}
+
 
 .contactIntro {
   text-align: center;
@@ -84,10 +89,10 @@ h1 {
   text-shadow: 0 0 0.5px #333;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #823eb7;
+  color: $decorative-text;
   padding: 0.5rem;
   background: linear-gradient(to right, #f5f6fa 0%, #ffffff 100%);
-  border-left: 4px solid #823eb7;
+  border-left: 4px solid $decorative-text;
 }
 
 .methodMarker {
@@ -108,7 +113,7 @@ h1 {
 
   &:hover {
     transform: translateX(5px);
-    color: #823eb7;
+    color: $decorative-text;
     font-weight: bold;
   }
 }
@@ -128,4 +133,13 @@ h1 {
     text-shadow: 0 0 0.5px #333;
     font-style: italic;
   }
+}
+
+.contactValueWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.copyContainerCustom {
+  margin-left: 0.5rem;
 }

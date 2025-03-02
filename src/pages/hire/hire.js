@@ -1,20 +1,20 @@
-// Contact.jsx
 import React from "react";
 import styles from "./hire.module.scss";
+import CopyTextField from "../../components/copy_text_field/copy_text_field";
 
-const Contact = () => {
+const Hire = () => {
   const contactInfo = [
     {
       method: "Email",
-      value: "email@google.com",
+      value: "xeen@mailfence.com",
       link: "mailto:xeen@mailfence.com",
     },
-
     {
       method: "Phone",
-      value: "UA +380 00 00 000 000",
+      value: "+380-68-537-50-79",
     },
   ];
+  const numberFiltered = "+380685375079";
 
   return (
     <div className={styles.content}>
@@ -34,15 +34,28 @@ const Contact = () => {
                 <span className={styles.methodMarker}>▶</span>
                 {method}
               </div>
-              <a 
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.contactLink}
-              >
-                <span className={styles.linkMarker}>─</span>
-                {value}
-              </a>
+              <div className={styles.contactValueWrapper}>
+                {link ? (
+                  <a 
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.contactLink}
+                  >
+                    <span className={styles.linkMarker}>─</span>
+                    {value}
+                  </a>
+                ) : (
+                  <div className={styles.contactLink}>
+                    <span className={styles.linkMarker}>─</span>
+                    {value}
+                  </div>
+                )}
+                <CopyTextField 
+                  text={value}
+                  containerClassName={styles.copyContainerCustom}
+                />
+              </div>
             </li>
           ))}
         </ul>
@@ -55,4 +68,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Hire;
