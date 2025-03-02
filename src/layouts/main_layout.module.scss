@@ -14,7 +14,7 @@
   grid-template-rows: 40px 1fr 5vh;
   grid-template-columns: 10vw 90vw; 
   min-height: 100vh;
-  
+
   & > header {
     grid-area: header;
   }
@@ -41,6 +41,7 @@
     grid-area: footer;
     min-height: 5vh;
   }
+  
 }
 @media (min-width: 126px) and (max-width: 526px){
   .layout {

@@ -16,12 +16,12 @@ const Skills = () => {
 
     {
       category: "Tools",
-      subSkills: ["Git / GitLab", "Photoshop", "Redux (Basic)"],
+      subSkills: ["Git / GitLab", "Redux (Basic)", "Photoshop"],
     },
 
     {
       category: "Interfaces",
-      subSkills: ["Relational DB", "API"]
+      subSkills: ["REST API"]
     },
 
     {
