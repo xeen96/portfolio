@@ -6,7 +6,6 @@ import AboutPage from "../pages/about/about";
 import SkillsPage from "../pages/skills/skills";
 import HirePage from "../pages/hire/hire"
 import styles from "./main_layout.module.scss";
-import PageDisplay from "./page_display/page_display";
 import Footer from "./footer/footer";
 
 const Layout = () => {
