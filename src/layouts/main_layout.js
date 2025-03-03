@@ -15,10 +15,10 @@ const Layout = () => {
         <NavBar />
         <main>
         <Routes>
-          <Route path="*" element={<AboutPage />}/>
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/skills" element={<SkillsPage />} />
-          <Route path="/hire" element={<HirePage />} />
+          <Route path="/porfolio" element={<AboutPage />}/>
+          <Route path="porfolio//about" element={<AboutPage />} />
+          <Route path="porfolio/skills" element={<SkillsPage />} />
+          <Route path="porfolio/hire" element={<HirePage />} />
         </Routes>
         </main>
       <Footer/>
