@@ -6,17 +6,17 @@ const Hire = () => {
   const contactInfo = [
     {
       method: "Email",
-      value: "xeen@mailfence.com",
-      link: "mailto:xeen@mailfence.com",
+      value: process.env.REACT_APP_EMAIL,
+      link: `mailto:${process.env.REACT_APP_EMAIL}`,
     },
     {
       method: "Phone",
-      value: "+380-68-537-50-79",
+      value: process.env.REACT_APP_PHONE,
     },
     {
       method: "CV",
       value: "View | Download (Redirect to Google Drive)",
-      link: "https://drive.google.com/file/d/1BGqU3VZoYMvtXV4Y9z4tHrNGuqDuK3Hj/view?usp=drive_link"
+      link: process.env.REACT_APP_CV,
     }
   ];
 
