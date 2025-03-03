@@ -3,7 +3,7 @@ import Layout from "./layouts/main_layout";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
         <Layout />
     </BrowserRouter>
   );
