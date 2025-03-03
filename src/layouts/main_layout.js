@@ -16,9 +16,9 @@ const Layout = () => {
         <main>
         <Routes>
           <Route path="/porfolio" element={<AboutPage />}/>
-          <Route path="porfolio//about" element={<AboutPage />} />
-          <Route path="porfolio/skills" element={<SkillsPage />} />
-          <Route path="porfolio/hire" element={<HirePage />} />
+          <Route path="/porfolio/about" element={<AboutPage />} />
+          <Route path="/porfolio/skills" element={<SkillsPage />} />
+          <Route path="/porfolio/hire" element={<HirePage />} />
         </Routes>
         </main>
       <Footer/>
