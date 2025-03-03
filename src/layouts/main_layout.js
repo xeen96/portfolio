@@ -15,7 +15,7 @@ const Layout = () => {
         <NavBar />
         <main>
         <Routes>
-          <Route path="*" element={<AboutPage />}/>
+          <Route path="/" element={<AboutPage />}/>
           <Route path="/about" element={<AboutPage />} />
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/hire" element={<HirePage />} />
