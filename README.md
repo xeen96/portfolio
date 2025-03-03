@@ -1,6 +1,6 @@
 # Portfolio Website
 
-This is a personal portfolio website built with React. You can view the deployed project here: [Live Demo](https://xeen96.github.io/portfolio/).
+This is a personal portfolio website built with React. It allows you to showcase your projects, contact information, and resume.
 
 ## Installation
 
