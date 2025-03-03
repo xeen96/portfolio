@@ -13,8 +13,12 @@ const Hire = () => {
       method: "Phone",
       value: "+380-68-537-50-79",
     },
+    {
+      method: "CV",
+      value: "View | Download (Redirect to Google Drive)",
+      link: "https://drive.google.com/file/d/1BGqU3VZoYMvtXV4Y9z4tHrNGuqDuK3Hj/view?usp=drive_link"
+    }
   ];
-  const numberFiltered = "+380685375079";
 
   return (
     <div className={styles.content}>
@@ -51,10 +55,12 @@ const Hire = () => {
                     {value}
                   </div>
                 )}
-                <CopyTextField 
-                  text={value}
-                  containerClassName={styles.copyContainerCustom}
-                />
+                {method !== "CV" && (
+                  <CopyTextField 
+                    text={value}
+                    containerClassName={styles.copyContainerCustom}
+                  />
+                )}
               </div>
             </li>
           ))}

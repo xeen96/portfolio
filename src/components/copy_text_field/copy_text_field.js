@@ -1,4 +1,3 @@
-// components/copy_text_field/CopyTextField.jsx
 import React, { useState } from 'react';
 import styles from './copy_text_field.module.scss';
 

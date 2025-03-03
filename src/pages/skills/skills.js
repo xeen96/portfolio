@@ -1,4 +1,3 @@
-// Skills.jsx
 import React from "react";
 import styles from "./skills.module.scss";
 
@@ -26,7 +25,7 @@ const Skills = () => {
 
     {
       category: "Programming Methodologies",
-      subSkills: ["OOP", "Functional Programming", "Component-Based", "Procedural Programming"]
+      subSkills: ["OOP", "Functional", "Component-Based", "Procedural"]
     },
 
     {
