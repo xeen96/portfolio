@@ -27,6 +27,8 @@ REACT_APP_PHONE=+1234567890
 REACT_APP_NAME=YourName
 REACT_APP_FULLNAME=Your Full Name
 REACT_APP_CV=https://your-cv-link.com
+REACT_APP_LINKEDIN="linkedin-link"
+REACT_APP_TELEGRAM="telegram-link"
 ```
 
 Replace the placeholders with your actual information.
