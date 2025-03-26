@@ -1,52 +1,55 @@
 @use "../../styles/variables" as *;
 
-#header {
-//   height: 60px;
-  // background: #333;
-  background-color: $primary-bg;
-  color: white;
-  display: flex;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
-  gap:1vw;
-  grid-area: header;
-}
-.img-container {
-  margin-left: 2vw;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  height: 16px;
-
-}
-img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  aspect-ratio: 12/4;
-}
-
+$circle-size: 16px;
+$border-opacity: 0.5;
+$logo-height: 16px; 
+$logo-aspect-ratio: 12/4;
 
 @mixin circle($color) {
-  width: 16px;
-  height: 16px;
+  width: $circle-size;
+  height: $circle-size;
   border-radius: 50%;
   background-color: $color;
   flex-shrink: 0;
-
-}
-.circle-red {
-  @include circle(red);
 }
 
-.circle-yellow {
-  @include circle(orange);
-}
+.header {
+  grid-area: header;
+  background-color: $primary-bg;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1vw;
+  border-bottom: 3px solid rgba(0, 0, 0, $border-opacity);
 
-.circle-green {
-  @include circle(green);
+  .imgContainer {
+    margin-left: 2vw;
+    height: $logo-height; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    height: $logo-height; 
+    width: auto;
+    aspect-ratio: $logo-aspect-ratio;
+    object-fit: contain;
+  }
+
+  .circle {
+    &.circleRed {
+      @include circle(red);
+    }
+
+    &.circleYellow {
+      @include circle(orange);
+    }
+
+    &.circleGreen {
+      @include circle(green);
+    }
+  }
 }

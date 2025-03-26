@@ -17,7 +17,7 @@ const Hire = () => {
       method: "CV",
       value: "View | Download (Redirect to Google Drive)",
       link: process.env.REACT_APP_CV,
-    }
+    },
   ];
 
   return (
@@ -26,11 +26,11 @@ const Hire = () => {
         <h1>Contact Me</h1>
         <div className={styles.contactIntro}>
           <p>
-            I'm available for hire and open to new opportunities. 
-            Feel free to reach out through any of the methods below!
+            I'm available for hire and open to new opportunities. Feel free to
+            reach out through any of the methods below!
           </p>
         </div>
-        
+
         <ul className={styles.contactList}>
           {contactInfo.map(({ method, value, link }) => (
             <li key={method} className={styles.contactItem}>
@@ -40,7 +40,7 @@ const Hire = () => {
               </div>
               <div className={styles.contactValueWrapper}>
                 {link ? (
-                  <a 
+                  <a
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -56,7 +56,7 @@ const Hire = () => {
                   </div>
                 )}
                 {method !== "CV" && (
-                  <CopyTextField 
+                  <CopyTextField
                     text={value}
                     containerClassName={styles.copyContainerCustom}
                   />

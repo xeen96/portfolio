@@ -10,7 +10,7 @@
   background-color: $page-bg;
   height: 100%;
   width: 100%;
-  
+
   // width: 100%;
   // background-size:cover;
   .cta {
@@ -18,13 +18,13 @@
     flex-direction: column;
     align-items: center;
     width: 50%;
-  
+
     h1 {
       font-family: $secondary-fonts;
       font-weight: 700;
-      
-      &::first-letter{
-      color: $decorative-text;
+
+      &::first-letter {
+        color: $decorative-text;
       }
     }
 
@@ -35,23 +35,21 @@
       letter-spacing: -0.003em;
       line-height: 1.58;
       text-shadow: 0 0 0.5px #333;
-    
-      strong, span {
+
+      strong,
+      span {
         color: $decorative-text;
-      }  
+      }
     }
   }
-  
-  .social-button-container{
+
+  .social-button-container {
     display: flex;
     flex-direction: row;
     gap: 1em;
-  
+
     svg:hover {
       fill: $decorative-text;
     }
-    
-    }
-  
+  }
 }
-

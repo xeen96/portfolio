@@ -21,124 +21,139 @@
     text-align: center;
     margin-bottom: 2rem;
   }
-}
 
-.contactContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: $primary-fonts;
-  background: $page-bg;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  overflow-y: auto;
-  width: 100%;
-  max-width: 600px;
-
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: linear-gradient(180deg, #f5f6fa 0%, $page-bg 100%);
+  .contactContainer {
+    font-family: $primary-fonts;
+    background: $page-bg;
+    padding: 2rem;
     border-radius: 8px;
-    margin: 5px 0;
-  }
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    max-width: 600px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $decorative-text $page-bg;
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // font-family: $primary-fonts;
+    // background: $page-bg;
+    // padding: 2rem;
+    // border-radius: 8px;
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    // height: 100%;
+    // overflow-y: auto;
+    // width: 100%;
+    // max-width: 600px;
 
-  &::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, $decorative-text 0%, $primary-bg 100%);
-    border-radius: 8px;
-    border: 2px solid $page-bg;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    
-    &:hover {
-      background: linear-gradient(90deg, darken($decorative-text, 10%) 0%, darken($primary-bg, 10%) 100%);
+    // &::-webkit-scrollbar {
+    //   width: 12px;
+    // }
+
+    &::-webkit-scrollbar-track {
+      background: linear-gradient(180deg, #f5f6fa 0%, $page-bg 100%);
+      border-radius: 8px;
+      margin: 5px 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, $decorative-text 0%, $primary-bg 100%);
+      border-radius: 8px;
+      border: 2px solid $page-bg;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background: linear-gradient(
+          90deg,
+          darken($decorative-text, 10%) 0%,
+          darken($primary-bg, 10%) 100%
+        );
+      }
+    }
+
+    scrollbar-width: thin;
+    scrollbar-color: $decorative-text $page-bg;
+
+    .contactIntro {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      p {
+        color: #2c3e50;
+        font-size: 1.1rem;
+        text-shadow: 0 0 0.5px #333;
+      }
+    }
+
+    .contactList {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contactItem {
+      margin: 1.5rem 0;
+    }
+
+    .method {
+      text-shadow: 0 0 0.5px #333;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $decorative-text;
+      padding: 0.5rem;
+      background: linear-gradient(to right, #f5f6fa 0%, #ffffff 100%);
+      border-left: 4px solid $decorative-text;
+    }
+
+    .methodMarker {
+      margin-right: 0.5rem;
+      color: #7f8c8d;
+      font-size: 0.8rem;
+    }
+
+    .contactLink {
+      display: flex;
+      align-items: center;
+      padding: 0.4rem 0 0.4rem 1.5rem;
+      font-size: 1rem;
+      color: #2c3e50;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      text-shadow: 0 0 0.5px #333;
+
+      &:hover {
+        transform: translateX(5px);
+        color: $decorative-text;
+        font-weight: bold;
+      }
+    }
+
+    .linkMarker {
+      margin-right: 0.5rem;
+      color: #95a5a6;
+    }
+
+    .hireNote {
+      text-align: center;
+      margin-top: 2rem;
+
+      p {
+        color: #2c3e50;
+        font-size: 1rem;
+        text-shadow: 0 0 0.5px #333;
+        font-style: italic;
+      }
+    }
+
+    .contactValueWrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .copyContainerCustom {
+      margin-left: 0.5rem;
     }
   }
-
-  scrollbar-width: thin;
-  scrollbar-color: $decorative-text $page-bg;
-}
-
-
-
-.contactIntro {
-  text-align: center;
-  margin-bottom: 2rem;
-  
-  p {
-    color: #2c3e50;
-    font-size: 1.1rem;
-    text-shadow: 0 0 0.5px #333;
-  }
-}
-
-.contactList {
-  list-style: none;
-  padding: 0;
-}
-
-.contactItem {
-  margin: 1.5rem 0;
-}
-
-.method {
-  text-shadow: 0 0 0.5px #333;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: $decorative-text;
-  padding: 0.5rem;
-  background: linear-gradient(to right, #f5f6fa 0%, #ffffff 100%);
-  border-left: 4px solid $decorative-text;
-}
-
-.methodMarker {
-  margin-right: 0.5rem;
-  color: #7f8c8d;
-  font-size: 0.8rem;
-}
-
-.contactLink {
-  display: flex;
-  align-items: center;
-  padding: 0.4rem 0 0.4rem 1.5rem;
-  font-size: 1rem;
-  color: #2c3e50;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  text-shadow: 0 0 0.5px #333;
-
-  &:hover {
-    transform: translateX(5px);
-    color: $decorative-text;
-    font-weight: bold;
-  }
-}
-
-.linkMarker {
-  margin-right: 0.5rem;
-  color: #95a5a6;
-}
-
-.hireNote {
-  text-align: center;
-  margin-top: 2rem;
-  
-  p {
-    color: #2c3e50;
-    font-size: 1rem;
-    text-shadow: 0 0 0.5px #333;
-    font-style: italic;
-  }
-}
-
-.contactValueWrapper {
-  display: flex;
-  align-items: center;
-}
-
-.copyContainerCustom {
-  margin-left: 0.5rem;
 }

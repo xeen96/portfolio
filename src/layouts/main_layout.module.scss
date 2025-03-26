@@ -1,79 +1,83 @@
-// .content {
-//   display: grid;
-//   grid-template-columns: 200px auto;
-//   grid-template-rows: max-content;
-
-// }
 @use "../styles/variables" as *;
+
+// Базовые размеры
+$header-height: 40px;
+$footer-height: 5vh;
+$navbar-width-mobile: 24vw;
+$navbar-width-tablet: 22vw;
+$navbar-width-desktop: 15vw;
+$navbar-width-large: 10vw;
+
+// Миксин для медиа-запросов
+@mixin media-breakpoint($min, $max) {
+  @media (min-width: #{$min}) and (max-width: #{$max}) {
+    @content;
+  }
+}
 
 .layout {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "header header"
     "navbar content"
     "footer footer";
-  grid-template-rows: 40px 1fr 5vh;
-  grid-template-columns: 10vw 90vw; 
+  grid-template-rows: $header-height 1fr $footer-height;
+  grid-template-columns: $navbar-width-large 1fr;
   min-height: 100vh;
 
-  & > header {
+  // Элементы сетки
+  > header {
     grid-area: header;
   }
-  
-  & > nav {
+
+  > nav {
     grid-area: navbar;
-    font-size: 1em;
+    font-size: 11px;
   }
-  
-  & > main {
+
+  > main {
+    grid-area: content;
     display: flex;
     flex-direction: column;
-    grid-area: content;
+    
     p {
       font-size: 18px;
       overflow-wrap: break-word;
     }
+    
     h1 {
       font-size: 32px;
     }
   }
-  
-  & > footer {
-    grid-area: footer;
-    min-height: 5vh;
-  }
-  
-}
-@media (min-width: 126px) and (max-width: 526px){
-  .layout {
-    grid-template-rows: 40px 1fr 5vh;
-    grid-template-columns: 20vw 80vw; 
 
-    & > nav {
-      grid-area: navbar;
+  > footer {
+    grid-area: footer;
+    min-height: $footer-height;
+    padding: 1rem;
+  }
+
+  // Медиа-запросы
+  @include media-breakpoint(126px, 526px) {
+    grid-template-columns: $navbar-width-mobile 1fr;
+    
+    > nav {
       font-size: 0.3rem;
     }
   }
-}
 
-@media (min-width: 527px) and (max-width: 768px){
-  .layout {
-    grid-template-rows: 40px 1fr 5vh;
-    grid-template-columns: 20vw 80vw; 
-
-    & > nav {
-      grid-area: navbar;
-      font-size: 0.6rem;
+  @include media-breakpoint(527px, 768px) {
+    grid-template-columns: $navbar-width-tablet 1fr;
+    
+    > nav {
+      font-size: 0.5rem;
     }
   }
-}
-@media (min-width: 769px) and (max-width: 1024px) 
-{
-  .layout {
-    & > nav {
-      grid-area: navbar;
+
+  @include media-breakpoint(769px, 1024px) {
+    grid-template-columns: $navbar-width-desktop 1fr;
+    
+    > nav {
       font-size: 0.7rem;
     }
   }
 }
-

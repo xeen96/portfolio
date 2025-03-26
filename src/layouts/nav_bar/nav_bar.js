@@ -7,25 +7,16 @@ const NavBar = () => {
     <nav className={styles.navbar}>
       <ul>
         <li className={styles["li-blue"]}>
-          <NavLink 
-            to="/about"
-          >
-            About
-          </NavLink>
+          <NavLink to="/about">About</NavLink>
         </li>
         <li className={styles["li-red"]}>
-          <NavLink 
-            to="/skills" 
-          >
-            Skills
-          </NavLink>
+          <NavLink to="/skills">Skills</NavLink>
+        </li>
+        <li className={styles["li-yellow"]}>
+          <NavLink to="/projects">Projects</NavLink>
         </li>
         <li className={styles["li-green"]}>
-          <NavLink 
-            to="/hire"
-          >
-            Hire
-          </NavLink>
+          <NavLink to="/hire">Hire</NavLink>
         </li>
       </ul>
     </nav>

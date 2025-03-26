@@ -1,0 +1,168 @@
+@use "../../styles/variables" as *;
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $page-bg;
+  width: 100%;
+  min-height: calc(100vh - 40px - 5vh);
+}
+
+.projects {
+  font-family: $primary-fonts;
+  background: $page-bg;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  padding: 2rem;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $decorative-text $page-bg;
+
+  h1 {
+    font-family: $secondary-fonts;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, $primary-bg, $decorative-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 3px 1px white);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.projectsGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+.project {
+  background-color: lighten($decorative-text, 40%);
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  &.expanded {
+    background-color: lighten($decorative-text, 35%);
+  }
+}
+
+.projectContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  color: $primary-bg;
+  margin: 0;
+}
+
+.projectDescription {
+  color: darken($primary-bg, 20%);
+  margin: 0;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+}
+
+.stackContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.stackItem {
+  background-color: $decorative-text;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.expandedContent {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projectImage {
+  width: 100%;
+  object-fit:scale-down;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.projectLink {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: $decorative-text;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: darken($decorative-text, 10%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .projectTitle {
+    font-size: 1.3rem;
+  }
+
+  .projectDescription {
+    font-size: 0.9rem;
+  }
+
+  .projectImage {
+    max-height: 150px;
+    cursor: zoom-in;
+  }
+   
+
+}
+.fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.fullscreenImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}

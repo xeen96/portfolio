@@ -1,12 +1,60 @@
 @use "../../styles/variables" as *;
 
+$border-width: 1.5px;
+$hover-scale: 1.25;
+$transition-time: 0.75s;
+$shadow-color: aliceblue;
+
+@mixin frame-element($frame-color) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  list-style: none;
+  width: 50%;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  position: relative;
+  border: $border-width solid $frame-color;
+  transition: all $transition-time ease;
+  z-index: 0;
+
+  &:hover {
+    filter: drop-shadow(0 0 10px $frame-color) 
+            drop-shadow(0 0 20px $frame-color) 
+            drop-shadow(0 0 30px $frame-color);
+    scale: $hover-scale;
+    z-index: 1;
+
+    a {
+      font-weight: 500;
+      filter: drop-shadow(0 0 10px $shadow-color);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: $primary-bg;
+    transform: rotate(45deg);
+    transition: all $transition-time ease;
+    inset: -15%;
+    z-index: 1;
+  }
+
+  &:hover::after {
+    transform: rotate(0deg);
+    transition: all 0.5s ease;
+    inset: 100%;
+  }
+}
+
 .navbar {
   background-color: $primary-bg;
   display: flex;
   border-right: 2px solid black;
   justify-content: center;
   z-index: 1;
-  
 
   ul {
     margin-top: 20%;
@@ -15,79 +63,37 @@
     flex-direction: column;
     align-items: center;
     gap: 10vh;
-
-  
-  @mixin li($frame-color) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: content-box;
-    list-style: none;
-    width: 50%;
-    aspect-ratio: 1/1;
-    cursor: pointer;
-    transition: 0.75s;
-    position: relative;
-    border: 1.5px solid $frame-color;
-    z-index: 0;
-
-    /* frame logic*/
-     &:hover {
-      filter: drop-shadow(0 0 10px $frame-color) drop-shadow(0 0 20px $frame-color) drop-shadow(0 0 30px $frame-color);
-      z-index: 1;
-      scale: 1.25;
-      a {
-        font-weight: 500;
-        filter: drop-shadow(0px 0px 10px aliceblue);
-      }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      background: $primary-bg;
-      transform: rotate(45deg);
-      transition: 0.75s;
-      inset: -15%;
-      z-index: 1;
-    }
-
-    &:hover::after {
-      background-color: $primary-bg;
-      transform: rotate(0deg);
-      transition: 0.5s;
-      inset: 100%;
-    }
-    /* end frame logic*/ 
   }
-
   .li-red {
-    @include li(red)
+    @include frame-element(red);
   }
+
   .li-blue {
-    @include li(#2483ff)
+    @include frame-element(#2483ff);
   }
+
   .li-green {
-    @include li(green)
+    @include frame-element(green);
   }
+
   .li-yellow {
-    @include li(yellow)
+    @include frame-element(yellow);
   }
 
   a {
     font-family: $primary-fonts;
-    color: aliceblue;
+    color: $shadow-color;
     text-decoration: none;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1/1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     z-index: 10;
     font-weight: 200;
-    letter-spacing: 3.5px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
+    word-break: break-all;
   }
-}
 }

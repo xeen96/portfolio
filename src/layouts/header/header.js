@@ -1,23 +1,21 @@
 import React from "react";
-import styles from "./header.module.scss"
-import logo from "../../assets/header/logo.png"
 import { NavLink } from "react-router-dom";
+import styles from "./header.module.scss";
+import logo from "../../assets/header/logo.png";
+
 const Header = () => {
   return (
-    <div  
-      id={styles.header}>
-      <div className={styles["img-container"]}>
-
-      <NavLink 
-            to="/about"
-          >
-            <img src={logo} alt="logo"></img>
-          </NavLink>
+    <header className={styles.header}>
+      <div className={styles.imgContainer}>
+        <NavLink to="/about">
+          <img src={logo} alt="Website Logo" className={styles.logo} />
+        </NavLink>
       </div>
-      <div className={styles["circle-red"]}></div>
-      <div className={styles["circle-yellow"]}></div>
-      <div className={styles["circle-green"]}></div>
-    </div>
-  )
-}
+      <div className={`${styles.circle} ${styles.circleRed}`} />
+      <div className={`${styles.circle} ${styles.circleYellow}`} />
+      <div className={`${styles.circle} ${styles.circleGreen}`} />
+    </header>
+  );
+};
+
 export default Header;
