@@ -41,24 +41,3 @@ npm start
 ```
 
 The application will be available at `http://localhost:3000`.
-
-## Building for Production
-
-To create an optimized production build, run:
-```sh
-npm run build
-```
-
-This will generate a `build` folder with the static files ready for deployment.
-
-## Additional Notes for Beginners
-
-- Ensure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed.
-- Use a `.gitignore` file to prevent committing your `.env` file.
-- You can deploy the project using services like [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/).
-
-For further customization, modify the source files in the `src` directory.
-
----
-
-Feel free to contribute by submitting issues or pull requests!
