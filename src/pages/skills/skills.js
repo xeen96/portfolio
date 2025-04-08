@@ -1,36 +1,106 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./skills.module.scss";
 
 const Skills = () => {
+  const [expandedCategories, setExpandedCategories] = useState({});
+
+  const toggleCategory = (category) => {
+    setExpandedCategories({
+      ...expandedCategories,
+      [category]: !expandedCategories[category]
+    });
+  };
+
   const skills = [
     {
       category: "Programming Languages",
-      subSkills: ["JavaScript", "TypeScript", "Python", "C++"],
+      subCategories: [
+        {
+          name: "Scripting",
+          skills: ["JavaScript", "TypeScript", "Python"]
+        },
+        {
+          name: "System",
+          skills: ["C++"]
+        }
+      ]
     },
-
     {
       category: "Web Development",
-      subSkills: ["React.js", "CSS", "SCSS", "Tailwind CSS"],
+      subCategories: [
+        {
+          name: "Frontend Libraries",
+          skills: ["React.js"]
+        },
+        {
+          name: "State Management",
+          skills: ["Redux (Basic)", "Context API"]
+        },
+        {
+          name: "Styling",
+          skills: ["CSS", "SCSS", "Tailwind CSS", "Styled Components"]
+        },
+        {
+          name: "Frameworks",
+          skills: ["Next.js"]
+        }
+      ]
     },
-
     {
       category: "Tools",
-      subSkills: ["Git / GitLab", "Redux (Basic)", "Photoshop"],
+      subCategories: [
+        {
+          name: "Version Control",
+          skills: ["Git", "GitLab", "GitHub"]
+        },
+        {
+          name: "Build Tools",
+          skills: ["Webpack", "Vite"]
+        },
+        {
+          name: "Design",
+          skills: ["Photoshop", "Figma"]
+        }
+      ]
     },
-
     {
       category: "Interfaces",
-      subSkills: ["REST API"],
+      subCategories: [
+        {
+          name: "API",
+          skills: ["REST API"]
+        },
+      ]
     },
-
     {
-      category: "Programming Methodologies",
-      subSkills: ["OOP", "Functional", "Component-Based", "Procedural"],
+      category: "Databases",
+      subCategories: [
+        {
+          name: "SQL",
+          skills: ["PostgreSQL"]
+        },
+        {
+          name: "NoSQL",
+          skills: ["MongoDB"]
+        }
+      ]
     },
-
     {
       category: "Personal Qualities",
-      subSkills: ["Attentive", "Fast Learner", "Responsible", "Stressproof"],
+      subCategories: [
+        {
+          name: "Work Ethics",
+          skills: ["Attentive", "Responsible", "Detail-oriented"]
+        },
+        {
+          name: "Adaptability",
+          skills: ["Fast Learner", "Stressproof", "Problem Solver"]
+        },
+        {
+          name: "Teamwork",
+          skills: ["Collaborative", "Communication"]
+        }
+      ]
     },
   ];
 
@@ -39,20 +109,37 @@ const Skills = () => {
       <div className={styles.skillsTree}>
         <h1>My Skills</h1>
         <ul className={styles.treeList}>
-          {skills.map(({ category, subSkills }) => (
+          {skills.map(({ category, subCategories }) => (
             <li key={category} className={styles.treeNode}>
-              <div className={styles.category}>
-                <span className={styles.categoryMarker}>▼</span>
+              <div 
+                className={styles.category}
+                onClick={() => toggleCategory(category)}
+              >
+                <span className={`${styles.categoryMarker} ${expandedCategories[category] ? styles.expanded : ''}`}>
+                  {expandedCategories[category] ? '▼' : '►'}
+                </span>
                 {category}
               </div>
-              <ul className={styles.branchList}>
-                {subSkills.map((skill) => (
-                  <li key={skill} className={styles.branch}>
-                    <span className={styles.branchMarker}>─</span>
-                    {skill}
-                  </li>
-                ))}
-              </ul>
+              {expandedCategories[category] && (
+                <ul className={styles.subCategoryList}>
+                  {subCategories.map((subCategory) => (
+                    <li key={`${category}-${subCategory.name}`} className={styles.subCategory}>
+                      <div className={styles.subCategoryName}>
+                        <span className={styles.subCategoryMarker}>◆</span>
+                        {subCategory.name}
+                      </div>
+                      <ul className={styles.branchList}>
+                        {subCategory.skills.map((skill) => (
+                          <li key={skill} className={styles.branch}>
+                            <span className={styles.branchMarker}>─</span>
+                            {skill}
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>

@@ -8,7 +8,6 @@ const About = () => {
   <div className={styles.cta}>
   <h1>About Me</h1>
     <p>Hi, I'm <span>{process.env.REACT_APP_NAME}</span></p>
-    <p>I specialize in building modern, responsive applications using <strong>React</strong>, <strong>JavaScript</strong>, <strong>CSS</strong>, and <strong>SCSS</strong>.</p>
     </div>
 
   <div className={styles["social-button-container"]}>
